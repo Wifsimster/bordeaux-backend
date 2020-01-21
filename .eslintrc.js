@@ -8,7 +8,8 @@ module.exports = {
   parserOptions: {
     sourceType: "module"
   },
-  extends: ["eslint:recommended", "plugin:node/recommended"],
+  extends: ["eslint:recommended", "plugin:node/recommended", "plugin:jest/recommended"],
+  plugins: ["jest"],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
