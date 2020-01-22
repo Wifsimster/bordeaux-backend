@@ -1,4 +1,4 @@
-const File = require('./file')
+const File = require('../src/utils/file')
 
 test('[file] existFile()', () => {
   expect(File.existFile('server')).toBeFalsy()

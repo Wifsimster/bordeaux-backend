@@ -29,7 +29,6 @@ class File {
           .filter(dirent => dirent.isDirectory())
           .map(dirent => dirent.name)
       } catch (err) {
-        console.error(err)
         return false
       }
     }

@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const API_KEY = '45f0dbbbdee6820d59727e39febc79e3 '
+const API_KEY = '45f0dbbbdee6820d59727e39febc79e3'
 
 class Tmdb {
   constructor() {
