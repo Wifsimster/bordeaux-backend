@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "channels/*": [
+        "src/channels/*"
+      ],
+      "classes/*": [
+        "src/classes/*"
+      ],
+      "cron/*": [
+        "src/cron/*"
+      ],
+      "data/*": [
+        "src/data/*"
+      ],
+      "utils/*": [
+        "src/utils/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

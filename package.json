@@ -1,0 +1,86 @@
+{
+  "name": "bordeaux-backend",
+  "version": "0.1.0",
+  "description": "Bordeaux WebSocket core",
+  "main": "backend.js",
+  "keywords": [
+    "core",
+    "ws",
+    "websocket",
+    "bordeaux",
+    "tv-shows",
+    "realtime",
+    "web",
+    "self-hosted"
+  ],
+  "engines": {
+    "node": ">=12.14.1"
+  },
+  "scripts": {
+    "lint": "eslint --fix --ext .js src/",
+    "test": "jest",
+    "watch": "webpack --watch --config build/webpack.dev.js --mode development",
+    "nodemon": "nodemon --watch dist ./dist/backend.js",
+    "start": "concurrently \"npm run watch\" \"npm run nodemon\"",
+    "build:dev": "webpack --config build/webpack.dev.js --mode development",
+    "build:prod": "webpack --config build/webpack.prod.js --mode production",
+    "build:stats": "webpack --config build/webpack.prod.js --mode production --json > stats.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wifsimster/bordeaux-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wifsimster/bordeaux-backend/issues"
+  },
+  "homepage": "https://github.com/Wifsimster/bordeaux-backend#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.0.2",
+    "copy-webpack-plugin": "^5.1.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-node": "^11.0.0",
+    "husky": "^4.0.10",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "crypto-js": "^3.1.9-1",
+    "date-fns": "^2.9.0",
+    "medoc": "^1.3.0",
+    "node-cron": "^2.0.3",
+    "pavie": "^1.0.5",
+    "petrus": "^1.1.1",
+    "transmission": "^0.4.9",
+    "ws": "^7.2.1",
+    "yquem": "^1.1.9"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^channels(.*)$": "<rootDir>/src/channels/$1",
+      "^classes(.*)$": "<rootDir>/src/classes/$1",
+      "^cron(.*)$": "<rootDir>/src/cron/$1",
+      "^data(.*)$": "<rootDir>/src/data/$1",
+      "^utils(.*)$": "<rootDir>/src/utils/$1"
+    }
+  }
+}

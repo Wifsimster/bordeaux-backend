@@ -1,9 +1,11 @@
 logs
 *.log
 npm-debug.log*
-*.json
 node_modules/
 .npm
 .eslintcache
 *.tgz
 dist
+package-lock.json
+*-config.json
+activity-*.json
