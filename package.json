@@ -27,7 +27,7 @@
     "build:stats": "webpack --config build/webpack.prod.js --mode production --json > stats.json"
   },
   "files": [
-    "dist"
+    "dist/"
   ],
   "repository": {
     "type": "git",
