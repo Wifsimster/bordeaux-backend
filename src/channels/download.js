@@ -1,5 +1,5 @@
-const Petrus = require('petrus')
-const Logger = require('utils/logger')
+import Petrus from 'petrus'
+import Logger from 'utils/logger'
 
 class Download {
   constructor() {}
@@ -26,4 +26,4 @@ class Download {
   }
 }
 
-module.exports = Download
+export default Download

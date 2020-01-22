@@ -1,5 +1,5 @@
-const File = require('utils/file')
-const format = require('date-fns/format')
+import File from 'utils/file'
+import format from 'date-fns/format'
 
 class Activity {
   constructor() {}
@@ -43,4 +43,4 @@ class Activity {
   }
 }
 
-module.exports = Activity
+export default Activity

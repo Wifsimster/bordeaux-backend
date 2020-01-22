@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 
 const API_KEY = 'cec34ee6ab9fbc9c745fddb50c23bd68 '
 
@@ -34,4 +34,4 @@ class Fanart {
   }
 }
 
-module.exports = Fanart
+export default Fanart

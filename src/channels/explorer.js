@@ -1,4 +1,4 @@
-const File = require('utils/file')
+import File from 'utils/file'
 
 class Explorer {
   constructor() {}
@@ -18,4 +18,4 @@ class Explorer {
   }
 }
 
-module.exports = Explorer
+export default Explorer

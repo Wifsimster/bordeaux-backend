@@ -6,6 +6,7 @@ module.exports = {
     jest: true
   },
   parserOptions: {
+    ecmaVersion: "2020",
     sourceType: "module"
   },
   extends: ["eslint:recommended", "plugin:node/recommended", "plugin:jest/recommended"],
@@ -24,7 +25,11 @@ module.exports = {
     yoda: "warn", // requires 'yoda' condition statements
     "no-var": "warn", // requires let or const, not var
     "node/no-missing-require": ["error", {
-      "allowModules": ["utils", "channels", "classes"]
-    }]
+      "allowModules": ["utils", "channels", "classes", "cron"]
+    }],
+    "node/no-missing-import": ["error", {
+      "allowModules": ["utils", "channels", "classes", "cron"]
+    }],
+    "node/no-unsupported-features/es-syntax": "off"
   }
 };

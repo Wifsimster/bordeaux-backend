@@ -1,8 +1,9 @@
-const File = require('utils/file')
-const Logger = require('utils/logger')
 
-const Pavie = require('pavie')
-const CryptoJS = require('crypto-js')
+import Pavie from 'pavie'
+import CryptoJS from 'crypto-js'
+
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const CONFIG_FILE = 'plex-config'
 
@@ -76,4 +77,4 @@ class Plex {
   }
 }
 
-module.exports = Plex
+export default Plex

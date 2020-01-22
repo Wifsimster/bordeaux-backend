@@ -1,8 +1,8 @@
-const cron = require('node-cron')
-const WebSocket = require('ws')
+import cron from 'node-cron'
+import WebSocket from 'ws'
 
-const File = require('utils/file')
-const Logger = require('utils/logger')
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const SERVER_FILE = 'server-config'
 const SUBTITLES_FILE = 'subtitles-config'
@@ -10,7 +10,14 @@ const PLEX_FILE = 'plex-config'
 const UUID = '67d119bc-e8ae-45ff-8cf3-0fc876576a6a'
 
 async function main() {
-  const serverSettings = await File.readFile(SERVER_FILE)
+
+  let serverSettings
+
+  try {
+    serverSettings = await File.readFile(SERVER_FILE)
+  } catch(err) {
+    Logger.error(`[CRON - Transfert] ${SERVER_FILE} not found !`)
+  }
 
   const transfert = cron.schedule(
     serverSettings.cron,
@@ -110,4 +117,4 @@ async function main() {
   transfert.start()
 }
 
-main()
+export default main

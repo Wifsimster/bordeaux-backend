@@ -1,8 +1,8 @@
-const cron = require('node-cron')
-const WebSocket = require('ws')
+import cron from 'node-cron'
+import WebSocket from 'ws'
 
-const File = require('utils/file')
-const Logger = require('utils/logger')
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const UPDATE_FILE = 'update-config'
 const SERVER_FILE = 'server-config'
@@ -42,4 +42,4 @@ async function main() {
   }
 }
 
-main()
+export default main

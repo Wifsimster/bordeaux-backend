@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: 'backend.js',
     path: path.resolve('dist'),
-    publicPath: 'dist/'
+    publicPath: '/'
   },
   plugins: [
     new CleanWebpackPlugin(),

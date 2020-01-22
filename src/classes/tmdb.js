@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 
 const API_KEY = '45f0dbbbdee6820d59727e39febc79e3'
 
@@ -66,4 +66,4 @@ class Tmdb {
   }
 }
 
-module.exports = Tmdb
+export default Tmdb

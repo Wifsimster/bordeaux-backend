@@ -1,6 +1,6 @@
-const Yquem = require('yquem')
-const File = require('utils/file')
-const Logger = require('utils/logger')
+import Yquem from 'yquem'
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const SUBTITLES_FILE = 'subtitles-config'
 const DIRECTORY_FILE = 'directory-config'
@@ -79,4 +79,4 @@ class Subtitles {
   }
 }
 
-module.exports = Subtitles
+export default Subtitles

@@ -1,5 +1,6 @@
-const fs = require('fs')
-const path = require('path')
+/* eslint-disable no-undef */
+import fs from 'fs'
+import path from 'path'
 
 const ENCODING = 'utf-8'
 
@@ -7,7 +8,7 @@ class File {
   constructor() {}
 
   static existFile(filename) {
-    if (!fs.existsSync(path.resolve(`${__dirname}/../data/${filename}.json`))) {
+    if (!fs.existsSync(path.resolve(`${DIR_NAME}/data/${filename}.json`))) {
       return false
     }
     return true
@@ -35,15 +36,13 @@ class File {
     return false
   }
 
-
-
   static async readFile(filename) {
-    if (!fs.existsSync(`${__dirname}/../data/`)) {
-      fs.mkdirSync(`${__dirname}/../data/`)
+    if (!fs.existsSync(`${DIR_NAME}/data/`)) {
+      fs.mkdirSync(`${DIR_NAME}/data/`)
     }
 
     return await fs.promises
-      .readFile(path.resolve(`${__dirname}/../data/${filename}.json`), {
+      .readFile(path.resolve(`${DIR_NAME}/data/${filename}.json`), {
         encoding: ENCODING
       })
       .then(async data => {
@@ -62,7 +61,7 @@ class File {
     if (data !== null && data !== undefined && typeof data === 'object') {
       return await fs.promises
         .writeFile(
-          path.resolve(`${__dirname}/../data/${filename}.json`),
+          path.resolve(`${DIR_NAME}/data/${filename}.json`),
           JSON.stringify(data),
           {
             encoding: ENCODING,
@@ -83,7 +82,7 @@ class File {
     if(filename !== null && filename !== undefined && filename !== '') {
       return await fs.promises
         .unlink(
-          path.resolve(`${__dirname}/../data/${filename}.json`)
+          path.resolve(`${DIR_NAME}/data/${filename}.json`)
         ).then(() => {
           return true
         })
@@ -96,4 +95,4 @@ class File {
   }
 }
 
-module.exports = File
+export default File

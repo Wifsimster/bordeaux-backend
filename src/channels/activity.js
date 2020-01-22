@@ -1,4 +1,4 @@
-const Activity = require('classes/activity')
+import Activity from 'classes/activity'
 
 class ChannelActivity {
   constructor() {}
@@ -15,4 +15,4 @@ class ChannelActivity {
   }
 }
 
-module.exports = ChannelActivity
+export default ChannelActivity

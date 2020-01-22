@@ -1,9 +1,8 @@
-const axios = require('axios')
+import axios from 'axios'
 
-const File = require('utils/file')
-const Logger = require('utils/logger')
-
-const Tmdb = require('classes/tmdb')
+import File from 'utils/file'
+import Logger from 'utils/logger'
+import Tmdb from 'classes/tmdb'
 
 const CONFIG_FILE = 'trakt-config'
 
@@ -222,4 +221,4 @@ class Trakt {
   }
 }
 
-module.exports = Trakt
+export default Trakt

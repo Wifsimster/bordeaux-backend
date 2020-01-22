@@ -1,6 +1,7 @@
-const Medoc = require('medoc')
-const File = require('utils/file')
-const Logger = require('utils/logger')
+import Medoc from 'medoc'
+
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const CONFIG_FILE = 'directory-config'
 
@@ -48,4 +49,4 @@ class Transfert {
   }
 }
 
-module.exports = Transfert
+export default Transfert

@@ -1,7 +1,7 @@
-const { execSync } = require('child_process')
+import { execSync } from 'child_process'
 
-const File = require('utils/file')
-const Logger = require('utils/logger')
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const CONFIG_FILE = 'update-config'
 
@@ -32,4 +32,4 @@ class Git {
   }
 }
 
-module.exports = Git
+export default Git

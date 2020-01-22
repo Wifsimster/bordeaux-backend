@@ -1,7 +1,8 @@
-const File = require('utils/file')
-const Logger = require('utils/logger')
-const TransmissionManager = require('transmission')
-const CryptoJS = require('crypto-js')
+import TransmissionManager from 'transmission'
+import CryptoJS from 'crypto-js'
+
+import File from 'utils/file'
+import Logger from 'utils/logger'
 
 const CONFIG_FILE = 'transmission-config'
 
@@ -119,4 +120,4 @@ class Transmission {
   }
 }
 
-module.exports = Transmission
+export default Transmission

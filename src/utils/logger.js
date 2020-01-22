@@ -1,4 +1,4 @@
-const Activity = require('channels/activity')
+import Activity from 'channels/activity'
 
 class Logger {
   constructor() {}
@@ -52,4 +52,4 @@ class Logger {
   }
 }
 
-module.exports = Logger
+export default Logger
