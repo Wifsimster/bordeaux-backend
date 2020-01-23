@@ -10,5 +10,9 @@
   ],
   "eslint.workingDirectories": [
     "./src"
-  ]
+  ],
+  "eslint.alwaysShowStatus": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 150,
+  "editor.wordBasedSuggestions": false
 }

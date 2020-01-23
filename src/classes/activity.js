@@ -6,9 +6,7 @@ class Activity {
 
   static async getAll(params) {
     if (params && typeof params === 'object' && typeof params.date === 'string') {
-      return await File.readFile(`activity-${params.date}`, {
-        flag: 'r'
-      })
+      return await File.readFile(`activity-${params.date}`, { flag: 'r' })
     } else {
       throw new Error('params are missings from data !')
     }

@@ -49,6 +49,7 @@ class File {
         try {
           return JSON.parse(data)
         } catch(err) {
+          console.error(err)
           throw new Error(`ReadFile : ${err}`)
         }
       })
