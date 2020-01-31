@@ -57,7 +57,7 @@ async function main() {
 
   const wss = new WebSocket.Server({ port: PORT })
 
-  console.log(`Server started : ws://${settings.host}:${settings.port}`)
+  console.log(`[Backend] Server started : ws://${settings.host}:${settings.port}`)
 
   Logger.info(
     'Server',
