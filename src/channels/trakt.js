@@ -60,12 +60,8 @@ class Trakt {
         await trakt.init()
 
         data.results = await trakt.instance
-          .post('oauth/device/code', {
-            client_id: settings.clientID
-          })
-          .then(response => {
-            return response.data
-          })
+          .post('oauth/device/code', { client_id: settings.clientID })
+          .then(response => response.data)
           .catch(err => {
             Logger.error('Trakt', err.message)
             data.error = err.message
@@ -87,9 +83,7 @@ class Trakt {
             client_id: settings.clientID,
             client_secret: settings.clientSecret
           })
-          .then(response => {
-            return response.data
-          })
+          .then(response => response.data)
           .catch(err => {
             Logger.error('Trakt', err.message)
             data.error = err.message
@@ -106,7 +100,7 @@ class Trakt {
 
         episodes = await trakt.instance
           .get(`calendars/my/shows/${data.params.startDate}/${data.params.days}`)
-          .then(async response => response.data)
+          .then(response => response.data)
           .catch(err => {
             Logger.error('Trakt', err.message)
             data.error = err.message
@@ -145,15 +139,9 @@ class Trakt {
         await trakt.init()
 
         data.results = await trakt.instance
-          .get(
-            `shows/${data.params.showId}/seasons/${data.params.season}/episodes/${data.params.episode}?extended=full`
-          )
-          .then(response => {
-            return response.data
-          })
-          .catch(err => {
-            data.error = err.message
-          })
+          .get(`shows/${data.params.showId}/seasons/${data.params.season}/episodes/${data.params.episode}?extended=full`)
+          .then(response => response.data)
+          .catch(err => { data.error = err.message })
       } catch (err) {
         Logger.error('Trakt', err.message)
         data.error = err.message
@@ -166,12 +154,8 @@ class Trakt {
 
         data.results = await trakt.instance
           .get('sync/last_activities')
-          .then(response => {
-            return response.data
-          })
-          .catch(err => {
-            data.error = err.message
-          })
+          .then(response => response.data)
+          .catch(err => { data.error = err.message })
       } catch (err) {
         Logger.error('Trakt', err.message)
         data.error = err.message
@@ -184,12 +168,10 @@ class Trakt {
 
         data.results = await trakt.instance
           .get('sync/watched/shows')
-          .then(response => {
-            return response.data
-          })
-          .catch(err => {
-            data.error = err.message
-          })
+          .then(response => response.data)
+          .catch(err => { data.error = err.message })
+
+        console.log(data.results)
       } catch (err) {
         Logger.error('Trakt', err.message)
         data.error = err.message
@@ -202,12 +184,8 @@ class Trakt {
 
         data.results = await trakt.instance
           .get('sync/collection/shows')
-          .then(response => {
-            return response.data
-          })
-          .catch(err => {
-            data.error = err.message
-          })
+          .then(response => response.data)
+          .catch(err => { data.error = err.message})
       } catch (err) {
         Logger.error('Trakt', err.message)
         data.error = err.message
